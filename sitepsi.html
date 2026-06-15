@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanessa Almeida | Psicanalista Clínica</title>
+    <style>
+        /* Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --cor-primaria: #4a5d4e; /* Verde sálvia escuro */
+            --cor-secundaria: #8f9e8b; /* Verde sálvia claro */
+            --cor-fundo: #fcfbfa; /* Off-white */
+            --cor-texto: #1a1a1a;
+            --cor-texto-claro: #ffffff;
+            --cor-rodape: #38473b; /* A cor sólida que você pediu */
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;           
+        }
+
+        /* Cabeçalho / Menu */
+        header {
+            background-color: rgba(252, 251, 250, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #444;
+            margin-left: 30px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* Seção Principal (Hero) */
+        .hero {
+            padding: 160px 20px 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            min-height: 85vh;
+            gap: 60px;
+        }
+
+        .hero-conteudo {
+            flex: 1.1;
+        }
+
+        .hero-conteudo h1 {
+            font-size: 3.5rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero-conteudo p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 35px;
+            max-width: 480px;
+        }
+
+        /* Container da Imagem com o Arco Perfeito */
+        .hero-imagem {
+            flex: 0.9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .moldura-arco {
+            width: 380px; 
+            height: 480px; 
+            background-color: #7d9080; /* Tom exato sálvia do fundo da imagem */
+            border-radius: 190px 190px 0 0; /* Arco perfeito */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .foto-psicologa {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            background-color: #586c5d;
+            color: var(--cor-texto-claro);
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 25px; /* Bordas arredondadas elegantes como no print */
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-rodape);
+            transform: translateY(-2px);
+        }
+
+        /* Seção Sobre / Abordagem */
+        .sobre {
+            background-color: #f2efe9;
+            padding: 90px 20px;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-container h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .section-container p {
+            font-size: 1.15rem;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Serviços / Diferenciais */
+        .servicos {
+            padding: 100px 20px;
+        }
+
+        .grid-servicos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1.5px solid #dcdad4;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        /* Ícones minimalistas simulados */
+        .card-icone {
+            width: 50px;
+            height: 50px;
+            background-color: #e5ece6;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            color: var(--cor-primaria);
+            font-weight: bold;
+        }
+
+        .card h3 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Rodapé Ajustado com a cor sólida #38473b */
+        footer {
+            background-color: var(--cor-rodape);
+            color: var(--cor-texto-claro);
+            padding: 80px 20px 40px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-bloco {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-bloco h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-bloco p {
+            opacity: 0.85;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .btn-footer {
+            background-color: #586c5d;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .rodapé-texto {
+            width: 100%;
+            font-size: 0.85rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* Responsividade (Para Celular e Tablets) */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 140px;
+                gap: 40px;
+            }
+            .hero-conteudo p {
+                margin: 0 auto 35px auto;
+            }
+            .moldura-arco {
+                width: 300px;
+                height: 380px;
+                border-radius: 150px 150px 0 0;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .menu a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Vanessa Almeida</div>
+            <nav class="menu">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Abordagem</a>
+                <a href="#atendimento">Atendimentos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-conteudo">
+            <h1>Espaço de escuta analítica e autoconhecimento.</h1>
+            <p>Um ambiente seguro e sigiloso para investigar o inconsciente, compreender conflitos internos e ressignificar sua história.</p>
+            <a href="https://wa.me/5515991266678" target="_blank" class="btn">Agendar uma Consulta</a>
+        </div>
+        <div class="hero-imagem">
+            <div class="moldura-arco">
+                <img src="vanessa.png" alt="Vanessa Almeida - Psicanalista" class="foto-psicologa">
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <div class="section-container">
+            <h2>A Psicanálise</h2>
+            <p>Diferente de abordagens focadas apenas em metas comportamentais, a psicanálise busca a raiz do sofrimento psíquico. Através da fala livre, olhamos para além do sintoma, permitindo que você compreenda padrões repetitivos e encontre novas formas de lidar com a vida.</p>
+        </div>
+    </section>
+
+    <section id="atendimento" class="servicos">
+        <div class="section-container">
+            <h2>Como posso te ajudar</h2>
+            <div class="grid-servicos">
+                <div class="card">
+                    <div class="card-icone">ψ</div>
+                    <h3>Escuta a analítica</h3>
+                    <p>Espaço de escuta analítica e autoconhecimento e com suporte via WhatsApp.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icone">👥</div>
+                    <h3>Atendimentos</h3>
+                    <p>Abordagem em fobias, angústias, depressão e crises de identidade.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icone">♡</div>
+                    <h3>Atendimento</h3>
+                    <p>Sessões orientadas que apoiam os momentos difíceis e geram novos recomeços.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-container">
+            <div class="footer-bloco">
+                <h3>Espaço de escuta analítica</h3>
+                <p>Espaço de escuta analítica e autoconhecimento, focado em trazer clareza para a sua mente.</p>
+            </div>
+            <div class="footer-bloco">
+                <h3>Contato em Vanessa</h3>
+                <p>📞 (15) 99126-6678</p>
+                <p>✉️ contato@vanessaalmeida.com.br</p>
+                <a href="https://wa.me/5515991266678" target="_blank" class="btn btn-footer" style="margin-top: 15px;">Agendar uma Consulta</a>
+            </div>
+        </div>
+        
+        <div class="rodapé-texto">
+            <p>Copyright &copy; 2026 Vanessa Almeida. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
